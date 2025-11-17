@@ -29,6 +29,7 @@ jobs:
           context: ./springbootproject
           file: ./springbootproject/backend.Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/2300033235-lab-backend:latest
 
       - name: Build and push frontend image
@@ -37,4 +38,5 @@ jobs:
           context: ./reactapp
           file: ./reactapp/frontend.Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/2300033235-lab-frontend:latest
